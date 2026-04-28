@@ -4,19 +4,13 @@ import questionsData from './questions.json';
 import Board from './components/Board';
 
 function App() {
-  return (
-        <div className="game-screen">
-            <h1 className="game-title">🎯 Jeopardy</h1>
-            <Board />
-        </div>
-    );
     
   return (
     <div className="card">
-      <h1>Velkommen! 👋</h1>
+      <h1>HELLUUUU! 👋</h1>
       <p>
         Du kan se koden for dette prosjektet{" "}
-        <a href="https://github.com/bekk/prosjektutgangspunkt">
+        <a href="https://github.com/rumyanazhizhovska/jeopardy.git">
           i repoet på GitHub
         </a>
       </p>
