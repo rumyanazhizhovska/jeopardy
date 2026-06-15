@@ -9,10 +9,9 @@ function App() {
     <div className="card">
       <h1>HELLUUUU! 👋</h1>
       <p>
-        Du kan se koden for dette prosjektet{" "}
-        <a href="https://github.com/rumyanazhizhovska/jeopardy.git">
-          i repoet på GitHub
-        </a>
+        <Board
+          categories={questionsData.categories}
+        />
       </p>
       <p>
         Du kan endre koden i <code>src/App.jsx</code>
