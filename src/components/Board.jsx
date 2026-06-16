@@ -1,12 +1,12 @@
-import ButtonColumn from './ButtonColumn';
+import ButtonRow from './ButtonRow';
 
 function Board({ categories }) {
     return( <div>
-        <ButtonColumn categories={categories} index = {0} />
-        <ButtonColumn categories={categories} index = {1} />
-        <ButtonColumn categories={categories} index = {2} />
-        <ButtonColumn categories={categories} index = {3} />
-        <ButtonColumn categories={categories} index = {4} />
+        <ButtonRow categories={categories} valueIndex = {0} />
+        <ButtonRow categories={categories} valueIndex = {1} />
+        <ButtonRow categories={categories} valueIndex = {2} />
+        <ButtonRow categories={categories} valueIndex = {3} />
+        <ButtonRow categories={categories} valueIndex = {4} />
     </div> );
 }
 
