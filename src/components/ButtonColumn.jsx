@@ -1,24 +1,25 @@
-import questionsData from '../questions.json';
-
-function ButtonColumn(index) {
-    return <div>
-        <button question={questionsData.categories[index].questions[0]}>
-            Button 1
+function ButtonColumn({ categories, index }) {
+    return( <div>
+        <button>
+            {categories[index].questions[0].value}
         </button>
 
-        <button question={questionsData.categories[index].questions[1]}>
-            Button 2
+        <button>
+            {categories[index].questions[1].value}                 
         </button>
-        <button question={questionsData.categories[index].questions[2]}>
-            Button 3
+
+        <button>
+            {categories[index].questions[2].value}
         </button>
-        <button question={questionsData.categories[index].questions[3]}>
-            Button 4
+
+        <button>
+            {categories[index].questions[3].value}
         </button>
-        <button question={questionsData.categories[index].questions[4]}>
-            Button 5
+        
+        <button>
+            {categories[index].questions[4].value}
         </button>
-    </div>;
+    </div> );
 }
 
 export default ButtonColumn;

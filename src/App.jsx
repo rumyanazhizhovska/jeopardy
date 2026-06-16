@@ -7,17 +7,12 @@ function App() {
     
   return (
     <div className="card">
-      <h1>HELLUUUU! 👋</h1>
-      <p>
-        <Board
-          categories={questionsData.categories}
-        />
-      </p>
-      <p>
-        Du kan endre koden i <code>src/App.jsx</code>
-      </p>
-    </div>
-  );
+      <h1>Jeopardy</h1>
+      <Board
+        
+        categories={questionsData.categories}
+      />
+    </div> );
 }
 
 export default App;
