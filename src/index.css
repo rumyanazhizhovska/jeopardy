@@ -90,7 +90,11 @@ button:focus-visible {
 //TODO define question-value
 //TODO define question-actions
 //TODO define btn???
-//TODO define btn--secondary??? */
+//TODO define btn--secondary???
+//TODO define btn--primary???
+//TODO define answer-section
+//TODO define answer-label
+//TODO define answer-text */
 
 @media (prefers-color-scheme: light) {
   :root {
