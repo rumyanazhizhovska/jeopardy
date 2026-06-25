@@ -30,6 +30,27 @@ body {
   min-height: 100vh;
 }
 
+.board {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.board-column{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.board-category {
+  background-color: #acd0ff;
+  color: #053b4f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -42,9 +63,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #6b6b6b;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+.button-available {
+  background-color: #e06363;
+  color: #000000;
 }
 
 
@@ -55,6 +81,16 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* //TODO define game-screen
+//TODO define game-title
+//TODO define question-overlay
+//TODO define question-card
+//TODO define question-text
+//TODO define question-value
+//TODO define question-actions
+//TODO define btn???
+//TODO define btn--secondary??? */
 
 @media (prefers-color-scheme: light) {
   :root {

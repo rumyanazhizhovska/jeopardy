@@ -1,13 +1,26 @@
-import ButtonRow from './ButtonRow';
+import questionsData from '../questions.json';
 
-function Board({ categories }) {
-    return( <div>
-        <ButtonRow categories={categories} valueIndex = {0} />
-        <ButtonRow categories={categories} valueIndex = {1} />
-        <ButtonRow categories={categories} valueIndex = {2} />
-        <ButtonRow categories={categories} valueIndex = {3} />
-        <ButtonRow categories={categories} valueIndex = {4} />
-    </div> );
+function Board({ onSelectCard }) {
+    const { categories } = questionsData;
+
+    return (
+        <div className="board">
+            {categories.map((category, categoryIndex) => (
+                <div key={categoryIndex} className="board-column">
+                    <div className="board-category">{category.name}</div>
+                    {category.questions.map((question, questionIndex) => (
+                        <button
+                            key={questionIndex}
+                            className="button-available"
+                            onClick={() => onSelectCard(categoryIndex, questionIndex, question.value)}
+                        >
+                            ${question.value}
+                        </button>
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
 }
 
 export default Board;
