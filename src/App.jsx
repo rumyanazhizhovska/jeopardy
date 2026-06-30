@@ -10,6 +10,7 @@ function App() {
     // const [score, setScore] = useState(0);
 
     const [activeCard, setActiveCard] = useState(null);
+    const [usedCards, setUsedCards] = useState(new Set());
 
     function handleSelectCard(categoryIndex, questionIndex, value) {
         const { question, answer } = questionsData.categories[categoryIndex].questions[questionIndex];
@@ -21,6 +22,10 @@ function App() {
     }
 
     function handleResult() {
+        const cardKey = `${activeCard.categoryIndex}-${activeCard.questionIndex}`;
+        const newUsed = new Set(usedCards);
+        newUsed.add(cardKey);
+        setUsedCards(newUsed);
         setActiveCard(null);
     }
 
@@ -28,7 +33,7 @@ function App() {
         //game-screen is for overall layout of the game
         <div className="game-screen"> 
             <h1 className="game-title">🎯 Jeopardy</h1>
-            <Board onSelectCard={handleSelectCard} />
+            <Board usedCards={usedCards} onSelectCard={handleSelectCard} />
             {activeCard && (
                 <QuestionCard
                     question={activeCard.question}

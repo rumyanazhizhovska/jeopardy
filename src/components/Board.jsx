@@ -1,6 +1,6 @@
 import questionsData from '../questions.json';
 
-function Board({ onSelectCard }) {
+function Board({ usedCards, onSelectCard }) {
     const { categories } = questionsData;
 
     return (
@@ -8,15 +8,20 @@ function Board({ onSelectCard }) {
             {categories.map((category, categoryIndex) => (
                 <div key={categoryIndex} className="board-column">
                     <div className="board-category">{category.name}</div>
-                    {category.questions.map((question, questionIndex) => (
-                        <button
+                    {category.questions.map((question, questionIndex) => {
+                        const cardKey = `${categoryIndex}-${questionIndex}`;
+                        const isUsed = usedCards.has(cardKey);
+                        return (
+                            <button
                             key={questionIndex}
-                            className="button-available"
-                            onClick={() => onSelectCard(categoryIndex, questionIndex, question.value)}
+                            className={`board-button ${isUsed ? "board-button--unavailable" : "board-button--available"}`}
+                            onClick={() => !isUsed && onSelectCard(categoryIndex, questionIndex, question.value)}
+                            disabled={isUsed}
                         >
-                            ${question.value}
+                            {isUsed ? '' : `$${question.value}`}
                         </button>
-                    ))}
+                        );
+                    })}
                 </div>
             ))}
         </div>

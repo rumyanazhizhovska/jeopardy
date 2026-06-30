@@ -68,11 +68,15 @@ button {
   transition: border-color 0.25s;
 }
 
-.button-available {
+.board-button--available {
   background-color: #e06363;
   color: #000000;
 }
 
+.board-button--unavailable {
+  background-color: #cccccc;
+  color: #666666;
+}
 
 button:hover {
   border-color: #646cff;
@@ -82,7 +86,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* //TODO define game-screen
+/* 
+//TODO define button-board
+//TODO define game-screen
 //TODO define game-title
 //TODO define question-overlay
 //TODO define question-card
